@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yasin Açıkel - Endüstriyel Soğutma Danışmanlığı</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#0f4c81", secondary: "#e67e22" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Montserrat', sans-serif;
+      }
+      .counter-value {
+      transition: all 0.5s ease;
+      }
+      .project-card {
+      transition: transform 0.3s ease;
+      }
+      .project-card:hover {
+      transform: translateY(-5px);
+      }
+      .project-overlay {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      }
+      .project-card:hover .project-overlay {
+      opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-sm z-50">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="flex flex-col">
+          <a href="#" class="text-2xl font-semibold text-primary"
+            >Yasin Açıkel</a
+          >
+          <span class="text-sm text-gray-600">Endüstriyel Soğutma Uzmanı</span>
+        </div>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a
+            href="#"
+            class="text-gray-800 hover:text-primary font-medium transition"
+            >Ana Sayfa</a
+          >
+          <a
+            href="#about"
+            class="text-gray-800 hover:text-primary font-medium transition"
+            >Hakkımda</a
+          >
+          <a
+            href="#services"
+            class="text-gray-800 hover:text-primary font-medium transition"
+            >Hizmetler</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-800 hover:text-primary font-medium transition"
+            >Projeler</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-800 hover:text-primary font-medium transition"
+            >İletişim</a
+          >
+        </nav>
+        <!-- Contact Info -->
+        <div class="hidden md:flex items-center space-x-6">
+          <div class="flex items-center space-x-2">
+            <div
+              class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary"
+            >
+              <i class="ri-phone-line ri-lg"></i>
+            </div>
+            <span class="font-medium">+90 555 123 4567</span>
+          </div>
+          <a
+            href="#contact"
+            class="bg-primary text-white px-5 py-2.5 !rounded-button font-medium hover:bg-primary/90 transition whitespace-nowrap"
+            >Danışmanlık Talep Et</a
+          >
+        </div>
+        <!-- Mobile Menu Button -->
+        <button
+          class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700"
+          id="mobile-menu-button"
+        >
+          <i class="ri-menu-line ri-lg"></i>
+        </button>
+      </div>
+      <!-- Mobile Navigation -->
+      <div
+        class="md:hidden bg-white absolute w-full left-0 top-full shadow-md hidden"
+        id="mobile-menu"
+      >
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+          <a
+            href="#"
+            class="text-gray-800 hover:text-primary font-medium py-2 transition"
+            >Ana Sayfa</a
+          >
+          <a
+            href="#about"
+            class="text-gray-800 hover:text-primary font-medium py-2 transition"
+            >Hakkımda</a
+          >
+          <a
+            href="#services"
+            class="text-gray-800 hover:text-primary font-medium py-2 transition"
+            >Hizmetler</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-800 hover:text-primary font-medium py-2 transition"
+            >Projeler</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-800 hover:text-primary font-medium py-2 transition"
+            >İletişim</a
+          >
+          <div class="flex items-center space-x-2 py-2">
+            <div
+              class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary"
+            >
+              <i class="ri-phone-line"></i>
+            </div>
+            <span class="font-medium">+90 555 123 4567</span>
+          </div>
+          <a
+            href="#contact"
+            class="bg-primary text-white px-4 py-2 !rounded-button font-medium text-center hover:bg-primary/90 transition whitespace-nowrap"
+            >Danışmanlık Talep Et</a
+          >
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section
+      class="relative pt-24 w-full bg-cover bg-center"
+      style="background-image: url('https://readdy.ai/api/search-image?query=Modern%20industrial%20refrigeration%20facility%20with%20blue%20cooling%20systems%2C%20professional%20equipment%2C%20clean%20environment%2C%20technical%20engineering%20setup%2C%20industrial%20cooling%20technology%2C%20high-quality%20professional%20image%20with%20soft%20lighting%2C%20showing%20expertise%20in%20refrigeration%20systems&width=1920&height=1080&seq=1&orientation=landscape');"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/60"
+      ></div>
+      <div class="container mx-auto px-4 py-24 relative z-10">
+        <div class="max-w-2xl text-white">
+          <div
+            class="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-6"
+          >
+            17 Yıllık Sektör Tecrübesi
+          </div>
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+          >
+            Endüstriyel Soğutma Sistemlerinde Uzman Danışmanlık
+          </h1>
+          <p class="text-lg md:text-xl mb-8 opacity-90">
+            Soğuk hava deposu kurulumundan, fabrika kurulumuna ve sistem
+            optimizasyonuna kadar kapsamlı çözümler sunuyoruz.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#contact"
+              class="bg-white text-primary px-6 py-3 !rounded-button font-medium hover:bg-gray-100 transition whitespace-nowrap text-center"
+              >Ücretsiz Danışmanlık Alın</a
+            >
+            <a
+              href="#services"
+              class="bg-transparent border-2 border-white text-white px-6 py-3 !rounded-button font-medium hover:bg-white/10 transition whitespace-nowrap text-center"
+              >Hizmetlerimiz</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+          <div class="md:w-1/2">
+            <img
+              src="https://static.readdy.ai/image/0435984b942ea74cb613c6e02315f9d7/67056e85d9037f204c2e262f90d5e042.png"
+              alt="Yasin Açıkel"
+              class="rounded-lg shadow-lg w-1/3 h-auto object-cover mx-auto"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Hakkımda</h2>
+            <p class="text-gray-600 mb-6">
+              17 yıldır endüstriyel soğutma sektöründe faaliyet gösteriyorum.
+              Bilgi ve tecrübem sayesinde sektördeki diğer profesyoneller
+              tarafından projeleri hakkında fikrim ve görüşlerim sıklıkla
+              sorulmakta, danışmanlık hizmeti vermem istenmektedir.
+            </p>
+            <p class="text-gray-600 mb-6">
+              Soğuk hava deposu kurulumundan, soğutma sistemleri üreten
+              fabrikaların kurulumuna, soğutma sistemleri için dizayn ve bileşen
+              (kompresör, evaporatör vb.) seçimine kadar geniş bir yelpazede
+              danışmanlık hizmeti sunmaktayım.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary"
+                >
+                  <i class="ri-check-line ri-xl"></i>
+                </div>
+                <span class="font-medium text-gray-800">Teknik Uzmanlık</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary"
+                >
+                  <i class="ri-check-line ri-xl"></i>
+                </div>
+                <span class="font-medium text-gray-800">Proje Yönetimi</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary"
+                >
+                  <i class="ri-check-line ri-xl"></i>
+                </div>
+                <span class="font-medium text-gray-800"
+                  >Enerji Verimliliği</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold mb-4 text-gray-800">
+            Uzmanlık Alanlarım
+          </h2>
+          <p class="text-gray-600">
+            Endüstriyel soğutma sistemleri konusunda kapsamlı danışmanlık
+            hizmetleri sunuyorum. İhtiyaçlarınıza özel çözümler geliştirerek,
+            projelerinizin başarıyla tamamlanmasını sağlıyorum.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-6"
+            >
+              <i class="ri-store-3-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              Soğuk Hava Deposu Danışmanlığı
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Soğuk hava deposu kurulumu için ihtiyaç analizi, tasarım, ekipman
+              seçimi ve optimizasyon konularında uzman danışmanlık.
+            </p>
+            <a
+              href="#contact"
+              class="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all"
+            >
+              Detaylı Bilgi
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+          <!-- Service 2 -->
+          <div
+            class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-6"
+            >
+              <i class="ri-building-2-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              Fabrika Kurulum Danışmanlığı
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Soğutma sistemleri üreten fabrikaların kurulumu için planlama,
+              ekipman seçimi ve süreç optimizasyonu konularında danışmanlık.
+            </p>
+            <a
+              href="#contact"
+              class="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all"
+            >
+              Detaylı Bilgi
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+          <!-- Service 3 -->
+          <div
+            class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-6"
+            >
+              <i class="ri-settings-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              Sistem Tasarım ve Optimizasyonu
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Mevcut soğutma sistemlerinin analizi, performans iyileştirme ve
+              enerji verimliliği için optimizasyon çözümleri.
+            </p>
+            <a
+              href="#contact"
+              class="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all"
+            >
+              Detaylı Bilgi
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+          <!-- Service 4 -->
+          <div
+            class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-6"
+            >
+              <i class="ri-tools-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              Bileşen Seçimi ve Tedarik Danışmanlığı
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Kompresör, evaporatör ve diğer soğutma bileşenlerinin seçimi,
+              tedariki ve entegrasyonu konusunda uzman danışmanlık.
+            </p>
+            <a
+              href="#contact"
+              class="text-primary font-medium flex items-center gap-1 hover:gap-2 transition-all"
+            >
+              Detaylı Bilgi
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Stats Section -->
+    <section class="py-20 bg-primary text-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Stat 1 -->
+          <div class="text-center">
+            <div class="text-5xl font-bold mb-2">
+              <span class="counter-value" data-target="175">0</span>+
+            </div>
+            <p class="text-white/80 text-lg">Tamamlanan Proje</p>
+          </div>
+          <!-- Stat 2 -->
+          <div class="text-center">
+            <div class="text-5xl font-bold mb-2">
+              <span class="counter-value" data-target="85">0</span>+
+            </div>
+            <p class="text-white/80 text-lg">Danışmanlık Verilen Firma</p>
+          </div>
+          <!-- Stat 3 -->
+          <div class="text-center">
+            <div class="text-5xl font-bold mb-2">
+              <span class="counter-value" data-target="17">0</span>
+            </div>
+            <p class="text-white/80 text-lg">Sektördeki Yıl</p>
+          </div>
+          <!-- Stat 4 -->
+          <div class="text-center">
+            <div class="text-5xl font-bold mb-2">
+              <span class="counter-value" data-target="230">0</span>+
+            </div>
+            <p class="text-white/80 text-lg">Optimize Edilen Sistem</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl font-bold mb-4 text-gray-800">
+            Referans Projelerim
+          </h2>
+          <p class="text-gray-600">
+            Yıllar içinde tamamladığım başarılı projelerden bazıları. Her proje,
+            müşterilerimin ihtiyaçlarına özel çözümler sunarak, verimlilik ve
+            performansı artırmayı hedeflemektedir.
+          </p>
+        </div>
+        <!-- Project Filters -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <button
+            class="project-filter px-5 py-2 !rounded-button bg-primary text-white font-medium whitespace-nowrap"
+            data-filter="all"
+          >
+            Tüm Projeler
+          </button>
+          <button
+            class="project-filter px-5 py-2 !rounded-button bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition whitespace-nowrap"
+            data-filter="soguk-depo"
+          >
+            Soğuk Hava Depoları
+          </button>
+          <button
+            class="project-filter px-5 py-2 !rounded-button bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition whitespace-nowrap"
+            data-filter="fabrika"
+          >
+            Fabrika Kurulumları
+          </button>
+          <button
+            class="project-filter px-5 py-2 !rounded-button bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition whitespace-nowrap"
+            data-filter="sistem"
+          >
+            Sistem Tasarımları
+          </button>
+        </div>
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md group"
+            data-category="soguk-depo"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=Modern%20large-scale%20industrial%20cold%20storage%20facility%20with%20blue%20cooling%20units%2C%20organized%20storage%20racks%2C%20clean%20environment%2C%20professional%20industrial%20refrigeration%20equipment%2C%20technical%20setup%2C%20high-quality%20professional%20image&width=600&height=400&seq=3&orientation=landscape"
+                alt="Mega Soğuk Depo Projesi"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div
+                class="project-overlay absolute inset-0 bg-primary/80 flex items-center justify-center"
+              >
+                <div class="text-center p-6">
+                  <h4 class="text-xl font-semibold text-white mb-2">
+                    Mega Soğuk Depo Projesi
+                  </h4>
+                  <p class="text-white/90 mb-4">
+                    İstanbul'da 5.000 m² alana sahip soğuk hava deposu tasarımı
+                    ve kurulumu.
+                  </p>
+                  <a
+                    href="#"
+                    class="inline-block px-4 py-2 !rounded-button bg-white text-primary font-medium hover:bg-gray-100 transition whitespace-nowrap"
+                    >Detayları Gör</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="p-4">
+              <h4 class="text-lg font-semibold text-gray-800">
+                Mega Soğuk Depo Projesi
+              </h4>
+              <p class="text-gray-600 text-sm">İstanbul, 2024</p>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md group"
+            data-category="fabrika"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=Modern%20refrigeration%20manufacturing%20facility%20interior%2C%20production%20line%20for%20cooling%20systems%2C%20clean%20industrial%20environment%2C%20workers%20assembling%20refrigeration%20equipment%2C%20technical%20manufacturing%20setup%2C%20high-quality%20professional%20image&width=600&height=400&seq=4&orientation=landscape"
+                alt="Anadolu Soğutma Fabrikası"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div
+                class="project-overlay absolute inset-0 bg-primary/80 flex items-center justify-center"
+              >
+                <div class="text-center p-6">
+                  <h4 class="text-xl font-semibold text-white mb-2">
+                    Anadolu Soğutma Fabrikası
+                  </h4>
+                  <p class="text-white/90 mb-4">
+                    Konya'da endüstriyel soğutma sistemleri üreten fabrika
+                    kurulumu.
+                  </p>
+                  <a
+                    href="#"
+                    class="inline-block px-4 py-2 !rounded-button bg-white text-primary font-medium hover:bg-gray-100 transition whitespace-nowrap"
+                    >Detayları Gör</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="p-4">
+              <h4 class="text-lg font-semibold text-gray-800">
+                Anadolu Soğutma Fabrikası
+              </h4>
+              <p class="text-gray-600 text-sm">Konya, 2023</p>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md group"
+            data-category="sistem"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=Technical%20refrigeration%20system%20design%2C%20detailed%20engineering%20schematics%20and%20blueprints%2C%203D%20modeling%20of%20cooling%20systems%2C%20professional%20CAD%20design%20of%20industrial%20refrigeration%2C%20technical%20planning%20documents%2C%20high-quality%20professional%20image&width=600&height=400&seq=5&orientation=landscape"
+                alt="Marmara Gıda Sistem Tasarımı"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div
+                class="project-overlay absolute inset-0 bg-primary/80 flex items-center justify-center"
+              >
+                <div class="text-center p-6">
+                  <h4 class="text-xl font-semibold text-white mb-2">
+                    Marmara Gıda Sistem Tasarımı
+                  </h4>
+                  <p class="text-white/90 mb-4">
+                    Gıda işleme tesisi için özel soğutma sistemi tasarımı ve
+                    optimizasyonu.
+                  </p>
+                  <a
+                    href="#"
+                    class="inline-block px-4 py-2 !rounded-button bg-white text-primary font-medium hover:bg-gray-100 transition whitespace-nowrap"
+                    >Detayları Gör</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="p-4">
+              <h4 class="text-lg font-semibold text-gray-800">
+                Marmara Gıda Sistem Tasarımı
+              </h4>
+              <p class="text-gray-600 text-sm">Bursa, 2023</p>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md group"
+            data-category="soguk-depo"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=Pharmaceutical%20cold%20storage%20facility%2C%20medical-grade%20refrigeration%20systems%2C%20clean%20sterile%20environment%2C%20temperature-controlled%20storage%20units%2C%20pharmaceutical%20products%20storage%2C%20technical%20cooling%20setup%2C%20high-quality%20professional%20image&width=600&height=400&seq=6&orientation=landscape"
+                alt="Medikal Soğuk Depo Projesi"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div
+                class="project-overlay absolute inset-0 bg-primary/80 flex items-center justify-center"
+              >
+                <div class="text-center p-6">
+                  <h4 class="text-xl font-semibold text-white mb-2">
+                    Medikal Soğuk Depo Projesi
+                  </h4>
+                  <p class="text-white/90 mb-4">
+                    İlaç sektörü için özel tasarlanmış hassas sıcaklık kontrolü
+                    sağlayan depo.
+                  </p>
+                  <a
+                    href="#"
+                    class="inline-block px-4 py-2 !rounded-button bg-white text-primary font-medium hover:bg-gray-100 transition whitespace-nowrap"
+                    >Detayları Gör</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="p-4">
+              <h4 class="text-lg font-semibold text-gray-800">
+                Medikal Soğuk Depo Projesi
+              </h4>
+              <p class="text-gray-600 text-sm">Ankara, 2022</p>
+            </div>
+          </div>
+          <!-- Project 5 -->
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md group"
+            data-category="sistem"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=Industrial%20refrigeration%20system%20optimization%2C%20energy%20efficiency%20improvements%2C%20technical%20maintenance%20of%20cooling%20equipment%2C%20professional%20technicians%20working%20on%20large%20cooling%20systems%2C%20industrial%20facility%2C%20high-quality%20professional%20image&width=600&height=400&seq=7&orientation=landscape"
+                alt="Ege Soğutma Optimizasyonu"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div
+                class="project-overlay absolute inset-0 bg-primary/80 flex items-center justify-center"
+              >
+                <div class="text-center p-6">
+                  <h4 class="text-xl font-semibold text-white mb-2">
+                    Ege Soğutma Optimizasyonu
+                  </h4>
+                  <p class="text-white/90 mb-4">
+                    Mevcut sistemin enerji verimliliğini %30 artıran
+                    optimizasyon projesi.
+                  </p>
+                  <a
+                    href="#"
+                    class="inline-block px-4 py-2 !rounded-button bg-white text-primary font-medium hover:bg-gray-100 transition whitespace-nowrap"
+                    >Detayları Gör</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="p-4">
+              <h4 class="text-lg font-semibold text-gray-800">
+                Ege Soğutma Optimizasyonu
+              </h4>
+              <p class="text-gray-600 text-sm">İzmir, 2022</p>
+            </div>
+          </div>
+          <!-- Project 6 -->
+          <div
+            class="project-card rounded-lg overflow-hidden shadow-md group"
+            data-category="fabrika"
+          >
+            <div class="relative">
+              <img
+                src="https://readdy.ai/api/search-image?query=Refrigeration%20component%20manufacturing%20facility%2C%20production%20of%20compressors%20and%20evaporators%2C%20assembly%20line%20for%20cooling%20system%20parts%2C%20industrial%20manufacturing%20environment%2C%20technical%20production%20setup%2C%20high-quality%20professional%20image&width=600&height=400&seq=8&orientation=landscape"
+                alt="Teknik Kompresör Fabrikası"
+                class="w-full h-64 object-cover object-top"
+              />
+              <div
+                class="project-overlay absolute inset-0 bg-primary/80 flex items-center justify-center"
+              >
+                <div class="text-center p-6">
+                  <h4 class="text-xl font-semibold text-white mb-2">
+                    Teknik Kompresör Fabrikası
+                  </h4>
+                  <p class="text-white/90 mb-4">
+                    Soğutma kompresörleri üreten fabrikanın kurulum
+                    danışmanlığı.
+                  </p>
+                  <a
+                    href="#"
+                    class="inline-block px-4 py-2 !rounded-button bg-white text-primary font-medium hover:bg-gray-100 transition whitespace-nowrap"
+                    >Detayları Gör</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="p-4">
+              <h4 class="text-lg font-semibold text-gray-800">
+                Teknik Kompresör Fabrikası
+              </h4>
+              <p class="text-gray-600 text-sm">Kayseri, 2021</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold mb-4 text-gray-800">
+            Neden Beni Tercih Etmelisiniz?
+          </h2>
+          <p class="text-gray-600">
+            Sektördeki uzun yılların getirdiği deneyim ve teknik bilgi ile
+            projelerinize değer katıyorum.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Reason 1 -->
+          <div
+            class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-6"
+            >
+              <i class="ri-time-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-gray-800">
+              17 Yıllık Deneyim
+            </h3>
+            <p class="text-gray-600">
+              Endüstriyel soğutma sektöründe 17 yıllık deneyimle,
+              karşılaşılabilecek her türlü soruna çözüm üretebilecek bilgi
+              birikimine sahibim.
+            </p>
+          </div>
+          <!-- Reason 2 -->
+          <div
+            class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-6"
+            >
+              <i class="ri-book-open-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-gray-800">
+              Kapsamlı Teknik Bilgi
+            </h3>
+            <p class="text-gray-600">
+              Soğutma sistemlerinin tüm bileşenleri hakkında detaylı teknik
+              bilgi ve sürekli kendini yenileyen sektörel gelişmeleri takip eden
+              bir yaklaşım.
+            </p>
+          </div>
+          <!-- Reason 3 -->
+          <div
+            class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-6"
+            >
+              <i class="ri-global-line ri-2x"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4 text-gray-800">
+              Sektörel Network
+            </h3>
+            <p class="text-gray-600">
+              Yıllar içinde oluşturduğum geniş sektörel ağ sayesinde, en
+              kaliteli ekipman ve hizmet sağlayıcılarına erişim imkanı
+              sunuyorum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold mb-4 text-gray-800">
+            Müşteri Yorumları
+          </h2>
+          <p class="text-gray-600">
+            Danışmanlık hizmetlerimden memnun kalan müşterilerimin değerli
+            görüşleri.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+            <div class="flex items-center gap-1 text-yellow-400 mb-4">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "Yasin Bey'in soğuk hava depomuzun tasarımı ve kurulumu
+              sürecindeki profesyonel danışmanlığı sayesinde, enerji
+              tüketimimizi %25 azaltırken depolama kapasitemizi artırdık.
+              Sektördeki bilgi birikimi ve çözüm odaklı yaklaşımı gerçekten
+              etkileyici."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-gray-600"
+              >
+                <i class="ri-user-line ri-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800">Ahmet Yılmaz</h4>
+                <p class="text-gray-500 text-sm">
+                  Marmara Gıda A.Ş. - Genel Müdür
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+            <div class="flex items-center gap-1 text-yellow-400 mb-4">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "Fabrikamızın kurulum aşamasında Yasin Bey'in sunduğu danışmanlık
+              hizmeti, projenin zamanında ve bütçe dahilinde tamamlanmasında
+              büyük rol oynadı. Teknik bilgisi ve sektör tecrübesi ile birçok
+              potansiyel sorunu önceden tespit ederek çözüm üretti."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-gray-600"
+              >
+                <i class="ri-user-line ri-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800">Mehmet Kaya</h4>
+                <p class="text-gray-500 text-sm">
+                  Teknik Soğutma Ltd. - Teknik Direktör
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+            <div class="flex items-center gap-1 text-yellow-400 mb-4">
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-half-fill"></i>
+            </div>
+            <p class="text-gray-600 mb-6">
+              "Mevcut soğutma sistemimizin optimizasyonu için Yasin Bey ile
+              çalıştık. Sunduğu çözümler sayesinde enerji maliyetlerimizi önemli
+              ölçüde düşürdük ve sistemin ömrünü uzattık. Teknik bilgisi ve
+              pratik çözümleri ile kesinlikle tavsiye ediyorum."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center text-gray-600"
+              >
+                <i class="ri-user-line ri-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800">Ayşe Demir</h4>
+                <p class="text-gray-500 text-sm">
+                  Ege Soğutma A.Ş. - İşletme Müdürü
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section -->
+    <section
+      class="py-20 bg-cover bg-center relative"
+      style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20industrial%20refrigeration%20consultation%20meeting%2C%20engineers%20discussing%20blueprints%20and%20plans%2C%20modern%20office%20environment%2C%20technical%20discussion%20about%20cooling%20systems%2C%20professional%20business%20setting%2C%20high-quality%20professional%20image%20with%20soft%20lighting&width=1920&height=600&seq=9&orientation=landscape');"
+    >
+      <div class="absolute inset-0 bg-primary/80"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center text-white">
+          <h2 class="text-3xl font-bold mb-6">
+            Projeniz İçin Profesyonel Danışmanlık Alın
+          </h2>
+          <p class="text-xl mb-8 opacity-90">
+            Endüstriyel soğutma projelerinizde 17 yıllık tecrübemden faydalanın.
+            Ücretsiz ilk danışmanlık görüşmesi için hemen iletişime geçin.
+          </p>
+          <a
+            href="#contact"
+            class="inline-block px-8 py-4 !rounded-button bg-white text-primary font-medium text-lg hover:bg-gray-100 transition whitespace-nowrap"
+            >Danışmanlık Talep Et</a
+          >
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold mb-4 text-gray-800">İletişim</h2>
+          <p class="text-gray-600">
+            Projeleriniz hakkında görüşmek veya danışmanlık hizmeti almak için
+            benimle iletişime geçebilirsiniz.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div class="bg-gray-50 rounded-lg p-8 shadow-sm">
+            <h3 class="text-2xl font-semibold mb-6 text-gray-800">
+              Danışmanlık Talebi
+            </h3>
+            <form id="contact-form">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label for="name" class="block text-gray-700 font-medium mb-2"
+                    >Adınız Soyadınız</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring focus:ring-primary/20 outline-none transition"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-gray-700 font-medium mb-2"
+                    >E-posta Adresiniz</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring focus:ring-primary/20 outline-none transition"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-6">
+                <label for="phone" class="block text-gray-700 font-medium mb-2"
+                  >Telefon Numaranız</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring focus:ring-primary/20 outline-none transition"
+                  required
+                />
+              </div>
+              <div class="mb-6">
+                <label
+                  for="service"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Danışmanlık Konusu</label
+                >
+                <div class="relative">
+                  <select
+                    id="service"
+                    class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring focus:ring-primary/20 outline-none transition appearance-none pr-8"
+                    required
+                  >
+                    <option value="" disabled selected>Seçiniz</option>
+                    <option value="soguk-depo">
+                      Soğuk Hava Deposu Danışmanlığı
+                    </option>
+                    <option value="fabrika">
+                      Fabrika Kurulum Danışmanlığı
+                    </option>
+                    <option value="sistem">
+                      Sistem Tasarım ve Optimizasyonu
+                    </option>
+                    <option value="bilesen">
+                      Bileşen Seçimi ve Tedarik Danışmanlığı
+                    </option>
+                    <option value="diger">Diğer</option>
+                  </select>
+                  <div
+                    class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-500"
+                  >
+                    <i class="ri-arrow-down-s-line"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-6">
+                <label
+                  for="message"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Mesajınız</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring focus:ring-primary/20 outline-none transition resize-none"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-6">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <div class="relative">
+                    <input
+                      type="checkbox"
+                      class="sr-only"
+                      id="privacy"
+                      required
+                    />
+                    <div
+                      class="w-5 h-5 border border-gray-300 rounded bg-white"
+                    ></div>
+                    <div
+                      class="absolute inset-0 flex items-center justify-center hidden check-icon text-white"
+                    >
+                      <i class="ri-check-line ri-sm"></i>
+                    </div>
+                  </div>
+                  <span class="text-gray-700 text-sm"
+                    >Kişisel verilerimin işlenmesine izin veriyorum.</span
+                  >
+                </label>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition whitespace-nowrap"
+              >
+                Gönder
+              </button>
+            </form>
+          </div>
+          <!-- Contact Info -->
+          <div>
+            <div class="mb-12">
+              <h3 class="text-2xl font-semibold mb-6 text-gray-800">
+                İletişim Bilgileri
+              </h3>
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary shrink-0"
+                  >
+                    <i class="ri-map-pin-line ri-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-800 mb-1">Adres</h4>
+                    <p class="text-gray-600">
+                      Batı Mahallesi, Soğutma Caddesi No:123, 34890
+                      Pendik/İstanbul
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary shrink-0"
+                  >
+                    <i class="ri-phone-line ri-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-800 mb-1">Telefon</h4>
+                    <p class="text-gray-600">+90 555 123 4567</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary shrink-0"
+                  >
+                    <i class="ri-mail-line ri-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-800 mb-1">E-posta</h4>
+                    <p class="text-gray-600">info@yasinacikel.com</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary shrink-0"
+                  >
+                    <i class="ri-time-line ri-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium text-gray-800 mb-1">
+                      Çalışma Saatleri
+                    </h4>
+                    <p class="text-gray-600">Pazartesi - Cuma: 09:00 - 18:00</p>
+                    <p class="text-gray-600">Cumartesi: 10:00 - 14:00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Map -->
+            <div
+              class="rounded-lg overflow-hidden shadow-sm h-80 bg-cover bg-center"
+              style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
+        >
+          <!-- Company Info -->
+          <div>
+            <a
+              href="#"
+              class="text-3xl font-['Pacifico'] text-white mb-6 inline-block"
+              >logo</a
+            >
+            <p class="text-gray-400 mb-6">
+              17 yıllık sektör tecrübesiyle endüstriyel soğutma sistemleri
+              konusunda uzman danışmanlık hizmetleri sunuyorum.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-primary transition"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-primary transition"
+              >
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-primary transition"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-primary transition"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-xl font-semibold mb-6">Hızlı Erişim</h4>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Ana Sayfa</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition"
+                  >Hakkımda</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-white transition"
+                  >Hizmetler</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  class="text-gray-400 hover:text-white transition"
+                  >Projeler</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-white transition"
+                  >İletişim</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Services -->
+          <div>
+            <h4 class="text-xl font-semibold mb-6">Hizmetlerimiz</h4>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Soğuk Hava Deposu Danışmanlığı</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Fabrika Kurulum Danışmanlığı</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Sistem Tasarım ve Optimizasyonu</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Bileşen Seçimi ve Tedarik Danışmanlığı</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Newsletter -->
+          <div>
+            <h4 class="text-xl font-semibold mb-6">Bülten</h4>
+            <p class="text-gray-400 mb-4">
+              Sektörel gelişmeler ve yeni projelerimizden haberdar olmak için
+              bültenimize abone olun.
+            </p>
+            <form class="mb-4">
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="E-posta adresiniz"
+                  class="w-full px-4 py-2 !rounded-l-button !rounded-r-none border-none focus:outline-none text-gray-800"
+                />
+                <button
+                  type="submit"
+                  class="bg-primary text-white px-4 py-2 !rounded-r-button !rounded-l-none hover:bg-primary/90 transition whitespace-nowrap"
+                >
+                  Abone Ol
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              &copy; 2025 Yasin Açıkel. Tüm hakları saklıdır.
+            </p>
+            <div class="flex space-x-6">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white text-sm transition"
+                >Gizlilik Politikası</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white text-sm transition"
+                >Kullanım Şartları</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white text-sm transition"
+                >KVKK</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Mobile Menu Script -->
+    <script id="mobile-menu-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+          // Change icon based on menu state
+          const icon = mobileMenuButton.querySelector("i");
+          if (mobileMenu.classList.contains("hidden")) {
+            icon.classList.remove("ri-close-line");
+            icon.classList.add("ri-menu-line");
+          } else {
+            icon.classList.remove("ri-menu-line");
+            icon.classList.add("ri-close-line");
+          }
+        });
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll("a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+            const icon = mobileMenuButton.querySelector("i");
+            icon.classList.remove("ri-close-line");
+            icon.classList.add("ri-menu-line");
+          });
+        });
+      });
+    </script>
+    <!-- Counter Animation Script -->
+    <script id="counter-animation-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".counter-value");
+        const speed = 200;
+        const animateCounters = () => {
+          counters.forEach((counter) => {
+            const target = parseInt(counter.getAttribute("data-target"));
+            const count = parseInt(counter.innerText);
+            const increment = Math.trunc(target / speed);
+            if (count < target) {
+              counter.innerText = count + increment;
+              setTimeout(animateCounters, 1);
+            } else {
+              counter.innerText = target;
+            }
+          });
+        };
+        // Check if element is in viewport
+        const isInViewport = (element) => {
+          const rect = element.getBoundingClientRect();
+          return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <=
+              (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+          );
+        };
+        // Start animation when scrolled into view
+        let animated = false;
+        window.addEventListener("scroll", () => {
+          if (!animated && counters.length > 0 && isInViewport(counters[0])) {
+            animateCounters();
+            animated = true;
+          }
+        });
+        // Check on page load
+        if (!animated && counters.length > 0 && isInViewport(counters[0])) {
+          animateCounters();
+          animated = true;
+        }
+      });
+    </script>
+    <!-- Project Filter Script -->
+    <script id="project-filter-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(".project-filter");
+        const projects = document.querySelectorAll(".project-card");
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            // Update active button
+            filterButtons.forEach((btn) => {
+              btn.classList.remove("bg-primary", "text-white");
+              btn.classList.add("bg-gray-200", "text-gray-700");
+            });
+            button.classList.remove("bg-gray-200", "text-gray-700");
+            button.classList.add("bg-primary", "text-white");
+            // Filter projects
+            const filter = button.getAttribute("data-filter");
+            projects.forEach((project) => {
+              if (
+                filter === "all" ||
+                project.getAttribute("data-category") === filter
+              ) {
+                project.style.display = "block";
+              } else {
+                project.style.display = "none";
+              }
+            });
+          });
+        });
+      });
+    </script>
+    <!-- Custom Checkbox Script -->
+    <script id="custom-checkbox-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const checkbox = document.getElementById("privacy");
+        const checkIcon = document.querySelector(".check-icon");
+        checkbox.addEventListener("change", function () {
+          if (this.checked) {
+            checkIcon.classList.remove("hidden");
+            checkIcon.parentElement.classList.add("bg-primary", "border-primary");
+          } else {
+            checkIcon.classList.add("hidden");
+            checkIcon.parentElement.classList.remove("bg-primary", "border-primary");
+          }
+        });
+      });
+    </script>
+    <!-- Contact Form Script -->
+    <script id="contact-form-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("contact-form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Simple form validation
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const service = document.getElementById("service").value;
+          const message = document.getElementById("message").value;
+          const privacy = document.getElementById("privacy").checked;
+          if (!name || !email || !phone || !service || !message || !privacy) {
+            alert("Lütfen tüm alanları doldurunuz.");
+            return;
+          }
+          // Here you would normally send the form data to a server
+          alert(
+            "Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.",
+          );
+          form.reset();
+          document.querySelector(".check-icon").classList.add("hidden");
+          document
+            .querySelector(".check-icon")
+            .parentElement.classList.remove("bg-primary", "border-primary");
+        });
+      });
+    </script>
+    <!-- Smooth Scroll Script -->
+    <script id="smooth-scroll-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              const headerHeight = document.querySelector("header").offsetHeight;
+              const targetPosition =
+                targetElement.getBoundingClientRect().top +
+                window.pageYOffset -
+                headerHeight;
+              window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
